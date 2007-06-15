@@ -53,12 +53,6 @@ if [ "$1" = 0 ]; then
 	%php_webserver_restart
 fi
 
-%preun
-if [ "$1" = 0 ]; then
-	# remove last pieces of cache
-	rm -rf /var/cache/%{_name}/*
-fi
-
 %files
 %defattr(644,root,root,755)
 %doc *.txt *.php
