@@ -12,7 +12,6 @@ Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-
 # Source1-md5:	e6a3fe99bc850fe9c94a4074ec286139
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	233acef94ff789a799f0637648d1e10f
-Source10:	%{_name}.ini
 URL:		http://ioncube.com/
 BuildRequires:	coreutils
 Requires:	php-common >= 4:5.0.4
@@ -40,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 
 install $(ls -1 *_ts.so  | sort | tail -n 1) $RPM_BUILD_ROOT%{php_extensiondir}/%{_name}.so
-install %{SOURCE10} $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
+echo "zend_extension_ts=%{php_extensiondir}/%{_name}.so" > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
 
 %clean
 rm -rf $RPM_BUILD_ROOT
