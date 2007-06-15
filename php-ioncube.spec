@@ -14,7 +14,9 @@ Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.
 # Source2-md5:	233acef94ff789a799f0637648d1e10f
 URL:		http://ioncube.com/
 BuildRequires:	coreutils
-BuildRequires:	php-devel >= 4:5.0.4
+BuildRequires:	php-devel >= 3:5.0.0
+BuildRequires:	rpmbuild(macros) >= 1.344
+%{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
 ExclusiveArch:	%{ix86} %{x8664} ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
