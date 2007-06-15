@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 
 install $(ls -1 *_ts.so  | sort | tail -n 1) $RPM_BUILD_ROOT%{php_extensiondir}/%{_name}.so
-install %{SOURCE1} $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
+install %{SOURCE10} $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
 
 %clean
 rm -rf $RPM_BUILD_ROOT
