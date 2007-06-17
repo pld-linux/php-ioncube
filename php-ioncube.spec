@@ -1,6 +1,6 @@
-#
 %define		_name		ioncube
 Summary:	ionCube loader module for PHP
+Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
 Name:		php-%{_name}
 Version:	3.1
 Release:	1
@@ -13,7 +13,6 @@ Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	233acef94ff789a799f0637648d1e10f
 URL:		http://ioncube.com/
-BuildRequires:	coreutils
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
 %{?requires_php_extension}
@@ -23,6 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 ionCube loader module for PHP.
+
+%description -l pl.UTF-8
+Moduł wczytujący ionCube dla PHP.
 
 %prep
 %ifarch %{ix86}
@@ -34,8 +36,6 @@ ionCube loader module for PHP.
 %ifarch ppc
 %setup -q -T -b 2 -n %{_name}
 %endif
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
