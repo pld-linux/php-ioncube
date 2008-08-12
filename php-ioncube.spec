@@ -3,16 +3,19 @@ Summary:	ionCube loader module for PHP
 Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
 Name:		php-%{_name}
 # this is version of x86 modules; ppc one are usually older
-Version:	3.1.32
+Version:	3.1.33
 Release:	1
 License:	redistributable
 Group:		Libraries
+# 3.1r32
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	72fc7232400152f62eb7898404a31799
+# Source0-md5:	c04890a36ae97fb21834dde57041f90c
+# 3.1r33
 Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	89e31fe0aee019717ca4b27b375c8ca4
+# Source1-md5:	8f9fef24582fba07fa06d051e336041e
+# 3.1r32
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
-# Source2-md5:	4876ff298ca17df0435c8f2214b11f8b
+# Source2-md5:	e0aaac74350f344c5063d0b01a618999
 URL:		http://ioncube.com/
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
