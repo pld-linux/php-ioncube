@@ -18,7 +18,7 @@ Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.
 # Source2-md5:	8d3064a52127fa8d47ec5ddfca12047d
 URL:		http://ioncube.com/
 BuildRequires:	php-devel >= 3:5.0.0
-BuildRequires:	rpmbuild(macros) >= 1.344
+BuildRequires:	rpmbuild(macros) >= 1.532
 %{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
 ExclusiveArch:	%{ix86} %{x8664} ppc
@@ -45,7 +45,7 @@ Moduł wczytujący ionCube dla PHP.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 
-install $(ls -1 *_ts.so  | sort | tail -n 1) $RPM_BUILD_ROOT%{php_extensiondir}/%{_name}.so
+install $(ls -1 *_%{php_major_version}.%{php_minor_version}_ts.so  | sort | tail -n 1) $RPM_BUILD_ROOT%{php_extensiondir}/%{_name}.so
 echo "zend_extension_ts=%{php_extensiondir}/%{_name}.so" > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
 
 %clean
