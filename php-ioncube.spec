@@ -14,7 +14,7 @@ Name:		php-%{modname}
 Version:	%{ver}
 # Never decrease release in this package.
 # As not all arch versions are identical, you could be making some arch package older.
-Release:	3
+Release:	4
 License:	redistributable
 Group:		Libraries
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
@@ -24,10 +24,11 @@ Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	2d58162a83a10574c334716c352b9e34
 URL:		http://www.ioncube.com/
-BuildRequires:	php-devel >= 4:5.0.4
-BuildRequires:	rpmbuild(macros) >= 1.578
+BuildRequires:	php-devel >= 4:5.3.0
+BuildRequires:	rpmbuild(macros) >= 1.579
 BuildRequires:	sed >= 4.0
 %{?requires_php_extension}
+Requires:	php-common >= 4:5.3.0
 ExclusiveArch:	%{ix86} %{x8664} ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,7 +63,7 @@ install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 install -p %{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
 cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
 ; Enable %{modname} extension module
-zend_extension%{?zend_zts}=%{php_extensiondir}/%{modname}.so
+zend_extension=%{php_extensiondir}/%{modname}.so
 EOF
 
 %clean
