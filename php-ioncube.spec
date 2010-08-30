@@ -25,7 +25,7 @@ Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.
 # Source2-md5:	2d58162a83a10574c334716c352b9e34
 URL:		http://www.ioncube.com/
 BuildRequires:	php-devel >= 4:5.0.4
-BuildRequires:	rpmbuild(macros) >= 1.566
+BuildRequires:	rpmbuild(macros) >= 1.578
 BuildRequires:	sed >= 4.0
 %{?requires_php_extension}
 ExclusiveArch:	%{ix86} %{x8664} ppc
@@ -49,7 +49,7 @@ Moduł wczytujący ionCube dla PHP.
 %endif
 %undos *.txt
 
-mv ioncube_loader_lin_%{php_major_version}.%{php_minor_version}%{?zend_zts:_ts}.so %{modname}.so
+mv ioncube_loader_lin_%{php_major_version}.%{php_minor_version}%{?zend_zts}.so %{modname}.so
 ver=$(strings %{modname}.so | grep -F %{version})
 if [ "$ver" != "%{version}" ]; then
 	exit 1
@@ -62,7 +62,7 @@ install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 install -p %{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
 cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
 ; Enable %{modname} extension module
-zend_extension%{?zend_zts:_ts}=%{php_extensiondir}/%{modname}.so
+zend_extension%{?zend_zts}=%{php_extensiondir}/%{modname}.so
 EOF
 
 %clean
