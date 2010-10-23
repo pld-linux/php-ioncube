@@ -1,8 +1,8 @@
 %ifarch %{ix86}
-%define		ver	3.3.20
+%define		ver	4.0.0
 %endif
 %ifarch %{x8664}
-%define		ver	3.3.20
+%define		ver	4.0.0
 %endif
 %ifarch ppc
 %define		ver	3.1.33
@@ -18,11 +18,11 @@ Release:	4
 License:	redistributable
 Group:		Libraries
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	ad8c64a8824e72b14b09c21991cd9216
+# Source0-md5:	163e947e9da863c1fdf12e0a15b3f20b
 Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	4897efd55cb3ecf303bd90b0b7c8099d
+# Source1-md5:	8f628b49916ba47a5441eb797a883a56
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
-# Source2-md5:	2d58162a83a10574c334716c352b9e34
+# Source2-md5:	592ecac4c53028ad22e8cfb0cc8edd36
 URL:		http://www.ioncube.com/
 BuildRequires:	php-devel >= 4:5.3.0
 BuildRequires:	rpmbuild(macros) >= 1.579
