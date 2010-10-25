@@ -63,7 +63,7 @@ install -p %{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
 cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
 ; Enable %{modname} extension module
 %if %{php_major_version} == 5 && %{php_minor_version} < 3
-zend_extension%{?zend_zts:_ts}=%{php_extensiondir}/%{modname}.so
+zend_extension%{?zend_zts}=%{php_extensiondir}/%{modname}.so
 %else
 zend_extension=%{php_extensiondir}/%{modname}.so
 %endif
