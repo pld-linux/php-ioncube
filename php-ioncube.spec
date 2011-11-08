@@ -14,7 +14,7 @@ Name:		php-%{modname}
 Version:	%{ver}
 # Never decrease release in this package.
 # As not all arch versions are identical, you could be making some arch package older.
-Release:	7
+Release:	8
 License:	redistributable
 Group:		Libraries
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
