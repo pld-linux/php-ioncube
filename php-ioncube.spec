@@ -1,8 +1,8 @@
 %ifarch %{ix86}
-%define		ver	4.0.9
+%define		ver	4.0.12
 %endif
 %ifarch %{x8664}
-%define		ver	4.0.9
+%define		ver	4.0.12
 %endif
 %ifarch ppc
 %define		ver	3.1.33
@@ -14,13 +14,13 @@ Name:		php-%{modname}
 Version:	%{ver}
 # Never decrease release in this package.
 # As not all arch versions are identical, you could be making some arch package older.
-Release:	8
+Release:	9
 License:	redistributable
 Group:		Libraries
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	fbf099576e0c2e869f24de5fdde2c6d7
+# Source0-md5:	65e2191288699b682a1e594284e3d0cc
 Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	97c56bc8ff9fc3f9bba442c178b804d2
+# Source1-md5:	41bf4b1edf88d951f07f06854f6f548f
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	c9f44f2245e41cba0617c452488c3dc4
 URL:		http://www.ioncube.com/
