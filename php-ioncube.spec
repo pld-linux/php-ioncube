@@ -1,8 +1,8 @@
 %ifarch %{ix86}
-%define		ver	4.0.12
+%define		ver	4.2.2
 %endif
 %ifarch %{x8664}
-%define		ver	4.0.12
+%define		ver	4.2.2
 %endif
 %ifarch ppc
 %define		ver	3.1.33
@@ -14,13 +14,13 @@ Name:		php-%{modname}
 Version:	%{ver}
 # Never decrease release in this package.
 # As not all arch versions are identical, you could be making some arch package older.
-Release:	10
+Release:	11
 License:	redistributable
 Group:		Libraries
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	65e2191288699b682a1e594284e3d0cc
+# Source0-md5:	393fcc30775f57e01675665ce5861f34
 Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	41bf4b1edf88d951f07f06854f6f548f
+# Source1-md5:	87755369e44bdf7897b111f20c021cce
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	c9f44f2245e41cba0617c452488c3dc4
 URL:		http://www.ioncube.com/
@@ -47,7 +47,6 @@ Moduł wczytujący ionCube dla PHP.
 %ifarch ppc
 %setup -q -T -b 2 -n %{modname}
 %endif
-%undos *.txt
 
 mv ioncube_loader_lin_%{php_major_version}.%{php_minor_version}%{?zend_zts}.so %{modname}.so
 ver=$(strings %{modname}.so | grep -F %{version})
@@ -82,6 +81,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt *.php
 %config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
 %attr(755,root,root) %{php_extensiondir}/ioncube.so
