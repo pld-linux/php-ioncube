@@ -1,8 +1,8 @@
 %ifarch %{ix86}
-%define		ver	4.4.4
+%define		ver	4.5.3
 %endif
 %ifarch %{x8664}
-%define		ver	4.4.4
+%define		ver	4.5.3
 %endif
 %ifarch ppc
 %define		ver	3.1.33
@@ -10,7 +10,7 @@
 %define		modname		ioncube
 Summary:	ionCube loader module for PHP
 Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
-Name:		php-%{modname}
+Name:		php%{?php_suffix}-%{modname}
 Version:	%{ver}
 # Never decrease release in this package.
 # As not all arch versions are identical, you could be making some arch package older.
@@ -18,13 +18,13 @@ Release:	12
 License:	redistributable
 Group:		Libraries
 Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	31c187240343ec1414bbf350f15d7a0d
+# Source0-md5:	a492d56f64f585cc7811102f701f4839
 Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	967c4dc22d2d7b577638a118764b6088
+# Source1-md5:	12ec8c66fab9a85e05c0de6f2dfafff1
 Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	c9f44f2245e41cba0617c452488c3dc4
 URL:		http://www.ioncube.com/
-BuildRequires:	php-devel >= 4:5.2.0
+BuildRequires:	php%{?php_suffix}-devel >= 4:5.2.0
 BuildRequires:	rpmbuild(macros) >= 1.579
 BuildRequires:	sed >= 4.0
 %{?requires_php_extension}
