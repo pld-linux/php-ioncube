@@ -1,8 +1,8 @@
 %ifarch %{ix86}
-%define		ver	4.5.3
+%define		ver	4.6.1
 %endif
 %ifarch %{x8664}
-%define		ver	4.5.3
+%define		ver	4.6.1
 %endif
 %ifarch ppc
 %define		ver	3.1.33
@@ -17,11 +17,12 @@ Version:	%{ver}
 Release:	12
 License:	redistributable
 Group:		Libraries
-Source0:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	a492d56f64f585cc7811102f701f4839
-Source1:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	12ec8c66fab9a85e05c0de6f2dfafff1
-Source2:	http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
+# www.ioncube.com/loaders.php
+Source0:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
+# Source0-md5:	3e97ba2c5383a095562097ecff8b338b
+Source1:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
+# Source1-md5:	d400e87e0d6efa20bb4c177e16630e34
+Source2:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	c9f44f2245e41cba0617c452488c3dc4
 URL:		http://www.ioncube.com/
 BuildRequires:	php%{?php_suffix}-devel >= 4:5.2.0
