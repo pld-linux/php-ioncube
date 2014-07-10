@@ -29,6 +29,7 @@ BuildRequires:	php%{?php_suffix}-devel >= 4:5.2.0
 BuildRequires:	rpmbuild(macros) >= 1.579
 BuildRequires:	sed >= 4.0
 %{?requires_php_extension}
+Provides:	php(%{modname}) = %{version}
 ExclusiveArch:	%{ix86} %{x8664} ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
