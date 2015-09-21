@@ -1,7 +1,4 @@
-%ifarch %{ix86}
-%define		ver	5.0.18
-%endif
-%ifarch %{x8664}
+%ifarch %{ix86} %{x8664}
 %define		ver	5.0.18
 %endif
 %ifarch ppc
