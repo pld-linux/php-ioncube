@@ -1,8 +1,8 @@
 %ifarch %{ix86}
-%define		ver	5.0.7
+%define		ver	5.0.18
 %endif
 %ifarch %{x8664}
-%define		ver	5.0.7
+%define		ver	5.0.18
 %endif
 %ifarch ppc
 %define		ver	3.1.33
@@ -19,9 +19,9 @@ License:	redistributable
 Group:		Libraries
 # www.ioncube.com/loaders.php
 Source0:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.bz2
-# Source0-md5:	6b0f6c0df77cbc766eeeaca6741164ae
+# Source0-md5:	d6c19034730b5f4eb35b4f94e01cb93f
 Source1:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
-# Source1-md5:	a7379c88e56078ad43b897d572a68bcb
+# Source1-md5:	20329d3b324039892215e84c2ea6b0bc
 Source2:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_ppc.tar.bz2
 # Source2-md5:	c9f44f2245e41cba0617c452488c3dc4
 URL:		http://www.ioncube.com/
