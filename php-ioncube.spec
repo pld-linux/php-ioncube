@@ -1,7 +1,8 @@
+%define		php_name	php%{?php_suffix}
 %define		modname		ioncube
 Summary:	ionCube loader module for PHP
 Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
-Name:		php%{?php_suffix}-%{modname}
+Name:		%{php_name}-%{modname}
 Version:	5.0.18
 Release:	1
 License:	redistributable
@@ -12,7 +13,7 @@ Source0:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.
 Source1:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.bz2
 # Source1-md5:	20329d3b324039892215e84c2ea6b0bc
 URL:		http://www.ioncube.com/
-BuildRequires:	php%{?php_suffix}-devel >= 4:5.2.0
+BuildRequires:	%{php_name}-devel >= 4:5.2.0
 BuildRequires:	rpmbuild(macros) >= 1.579
 BuildRequires:	sed >= 4.0
 %{?requires_php_extension}
