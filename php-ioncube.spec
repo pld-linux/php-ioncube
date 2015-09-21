@@ -34,6 +34,7 @@ Moduł wczytujący ionCube dla PHP.
 %setup -q -T -b 1 -n %{modname}
 %endif
 
+%build
 mv ioncube_loader_lin_%{php_major_version}.%{php_minor_version}%{?zend_zts}.so %{modname}.so
 ver=$(strings %{modname}.so | grep -F %{version})
 if [ "$ver" != "%{version}" ]; then
