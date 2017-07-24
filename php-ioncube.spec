@@ -3,15 +3,15 @@
 Summary:	ionCube loader module for PHP
 Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
 Name:		%{php_name}-%{modname}
-Version:	6.0.9
+Version:	6.1.0
 Release:	1
 License:	redistributable
 Group:		Libraries
 # www.ioncube.com/loaders.php
 Source0:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.gz
-# Source0-md5:	20d20ec9b5c404ecc7e573353872c491
+# Source0-md5:	ab516ebc96a40ce45ea1ae1f49989fb6
 Source1:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
-# Source1-md5:	f6fa004a7473c96fe97769ad39741b35
+# Source1-md5:	f173c4d285440a7dc5f3fb1b20cacefc
 URL:		http://www.ioncube.com/
 BuildRequires:	%{php_name}-devel >= 4:5.2.0
 BuildRequires:	rpmbuild(macros) >= 1.579
@@ -37,7 +37,7 @@ Moduł wczytujący ionCube dla PHP.
 
 %build
 mv ioncube_loader_lin_%{php_major_version}.%{php_minor_version}%{?zend_zts}.so %{modname}.so
-ver=$(strings %{modname}.so | grep -F %{version} | grep "^%{version}")
+ver=$(strings %{modname}.so | grep -F %{version} | grep "^%{version}" | sed -e s'# .*##g')
 if [ "$ver" != "%{version}" ]; then
 	exit 1
 fi
