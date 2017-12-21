@@ -3,15 +3,15 @@
 Summary:	ionCube loader module for PHP
 Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
 Name:		%{php_name}-%{modname}
-Version:	10.0.4
+Version:	10.1.0
 Release:	1
 License:	redistributable
 Group:		Libraries
 # www.ioncube.com/loaders.php
 Source0:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86.tar.gz
-# Source0-md5:	0a6508505c7bfe06355a2a0d0f1f4ca5
+# Source0-md5:	14baa94905fbf97215f83fa7edd73403
 Source1:	http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
-# Source1-md5:	093e4adb4a1e1a5208fbaa40625f3d98
+# Source1-md5:	43a2a1e5abc6198aa9b5ca9028ab6fdd
 URL:		http://www.ioncube.com/
 BuildRequires:	%{php_name}-devel >= 4:5.2.0
 BuildRequires:	rpmbuild(macros) >= 1.579
