@@ -21,6 +21,8 @@ Provides:	php(%{modname}) = %{version}
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_enable_debug_packages	0
+
 %description
 ionCube loader module for PHP.
 
@@ -49,7 +51,7 @@ install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 install -p %{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
 cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
 ; Enable %{modname} extension module
-%if %{php_major_version} == 5 && %{php_minor_version} < 3
+%if "%{php_major_version}" == "5" && "%{php_minor_version}" < "3"
 zend_extension%{?zend_zts}=%{php_extensiondir}/%{modname}.so
 %else
 zend_extension=%{php_extensiondir}/%{modname}.so
