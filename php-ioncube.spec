@@ -4,7 +4,7 @@ Summary:	ionCube loader module for PHP
 Summary(pl.UTF-8):	Moduł wczytujący ionCube dla PHP
 Name:		%{php_name}-%{modname}
 Version:	12.0.5
-Release:	1
+Release:	2
 License:	redistributable
 Group:		Libraries
 # www.ioncube.com/loaders.php
@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 
 install -p %{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
-cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
+cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/00_%{modname}.ini
 ; Enable %{modname} extension module
 %if "%{php_major_version}" == "5" && "%{php_minor_version}" < "3"
 zend_extension%{?zend_zts}=%{php_extensiondir}/%{modname}.so
@@ -72,5 +72,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc LICENSE.txt README.txt USER-GUIDE.txt
-%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
+%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/00_%{modname}.ini
 %attr(755,root,root) %{php_extensiondir}/ioncube.so
